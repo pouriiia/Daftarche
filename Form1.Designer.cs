@@ -177,6 +177,7 @@
             this.timeDateToolStripMenuItem,
             this.timeDatePersianToolStripMenuItem,
             this.toolStripMenuItem3});
+            this.editToolStripMenuItem.Enabled = false;
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(49, 24);
             this.editToolStripMenuItem.Text = "&Edit";
@@ -266,6 +267,7 @@
             this.darkModeToolStripMenuItem,
             this.defaultToolStripMenuItem,
             this.darkModeToolStripMenuItem1});
+            this.themeToolStripMenuItem.Enabled = false;
             this.themeToolStripMenuItem.Name = "themeToolStripMenuItem";
             this.themeToolStripMenuItem.Size = new System.Drawing.Size(68, 24);
             this.themeToolStripMenuItem.Text = "&Theme";
@@ -321,6 +323,7 @@
             this.TextBox.Name = "TextBox";
             this.TextBox.Size = new System.Drawing.Size(819, 412);
             this.TextBox.TabIndex = 1;
+            this.TextBox.TextChanged += new System.EventHandler(this.TextBox_TextChanged);
             // 
             // panel1
             // 

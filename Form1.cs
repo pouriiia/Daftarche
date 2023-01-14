@@ -23,6 +23,11 @@ namespace Daftarche
             if (SaveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 File.AppendAllText(path = SaveFileDialog.FileName, TextBox.Text);
+                if (filestatus == true)
+                {
+                    filestatus = false;
+                    this.Text = "Daftarche (Text Editor)";
+                }
             }
             else
             {
@@ -34,11 +39,25 @@ namespace Daftarche
         {
             if (!String.IsNullOrWhiteSpace(path))
             {
-                
+                File.WriteAllText(path, TextBox.Text);
+                if (filestatus == true)
+                {
+                    filestatus = false;
+                    this.Text = "Daftarche (Text Editor)";
+                }
             }
             else
             {
-                Save_Click(sender, new EventArgs());
+                SaveAs_Click(sender,e);
+            }
+        }
+
+        private void TextBox_TextChanged(object sender, EventArgs e)
+        {
+            if (filestatus == false)
+            {
+                this.Text = "*" + this.Text;
+                filestatus = true;
             }
         }
     }
